@@ -1,4 +1,7 @@
-import { MapUtil } from './core/MapUtil.js'
+import { MapUtil } from './core'
 
-top.MapUtil = MapUtil
+const sol = {}
 
+sol.MapUtil = MapUtil
+
+export { sol }

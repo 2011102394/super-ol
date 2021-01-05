@@ -5,6 +5,10 @@ import OSM from 'ol/source/OSM'
 export class MapUtil {
 	constructor() {}
 
+	/**
+	 * 地图实例初始化
+	 * @param {*} mapContainer 
+	 */
 	static mapInit(mapContainer) {
 		let map
 		if (mapContainer) {
