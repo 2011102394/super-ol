@@ -7,5 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "张超嘉",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
+  },
+  "dependencies": {
+    "ol": "^6.5.0",
+    "proj4": "^2.6.3"
+  }
 }
