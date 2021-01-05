@@ -1,19 +1,27 @@
 {
-  "name": "super-ol",
-  "version": "1.0.0",
-  "description": "openlayers工具集",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+	"name": "super-ol",
+	"version": "1.0.0",
+	"description": "openlayers工具集",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"serve":"webpack --config=./build/webpack.config.base.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/2011102394/super-ol.git"
   },
-  "author": "张超嘉",
-  "license": "ISC",
-  "devDependencies": {
-    "webpack": "^5.11.1",
-    "webpack-cli": "^4.3.1"
-  },
-  "dependencies": {
-    "ol": "^6.5.0",
-    "proj4": "^2.6.3"
-  }
+  "keywords": [
+    "OpenLayers"
+  ],
+	"author": "张超嘉",
+	"license": "Apache-2.0",
+	"devDependencies": {
+		"webpack": "^5.11.1",
+		"webpack-cli": "^4.3.1"
+	},
+	"dependencies": {
+		"ol": "^6.5.0",
+		"proj4": "^2.6.3"
+	}
 }
