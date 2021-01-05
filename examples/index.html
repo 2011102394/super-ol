@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./lib/openlayers/ol.css">
+  <script src="/lib/openlayers/ol.js"></script>
+  <script src="/dist/super-ol.js"></script>
   <style>
     html,
     body {
@@ -15,13 +18,20 @@
     .container {
       height: 98vh;
     }
+
+    #map {
+      height: 90vh;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
-    测试
+    <div id="map"></div>
   </div>
+  <script>
+    const map = MapUtil.mapInit('map')
+  </script>
 </body>
 
 </html>

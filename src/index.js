@@ -1,1 +1,4 @@
-console.log(111)
+import { MapUtil } from './core/MapUtil.js'
+
+top.MapUtil = MapUtil
+

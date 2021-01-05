@@ -5,5 +5,6 @@ module.exports = {
 	output: {
 		filename: 'super-ol.js',
 		path: `${__dirname}/../dist/`,
+		libraryTarget:'umd'
 	},
 }
