@@ -3,10 +3,13 @@ module.exports = {
 	mode: 'production',
 	entry: './src/index.ts',
 	output: {
-		filename: 'super-ol.js',
+		filename: 'index.js',
 		path: `${__dirname}/../dist/`,
 		libraryTarget: 'umd',
 	},
+	externals: {
+    ol: 'ol'
+  },
 	module: {
 		rules: [{ test: /\.ts$/, exclude: /node_modules/, use: ['ts-loader'] }],
 	},

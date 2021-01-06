@@ -1,7 +1,6 @@
 import { Map, View } from 'ol'
 import TileLayer from 'ol/layer/Tile'
 import OSM from 'ol/source/OSM'
-import ol from 'ol'
 
 export class MapUtil {
 	constructor() {}
@@ -15,7 +14,7 @@ export class MapUtil {
 	 * @return {*}
 	 * @memberof MapUtil
 	 */
-	static mapInit(mapContainer: any, initOption: any) {
+	static mapInit(mapContainer: any, initOption:any) {
 		let map
 		if (mapContainer) {
 			map = new Map({
