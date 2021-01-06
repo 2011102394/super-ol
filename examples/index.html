@@ -30,9 +30,10 @@
     <div id="map"></div>
   </div>
   <script>
-    const mapUtil = sol.MapUtil
-    const map = mapUtil.mapInit('map')
-    
+    const ol = top.ol
+    const core = arsc.core
+    const map = core.mapInit(ol, 'map', {})
+
   </script>
 </body>
 

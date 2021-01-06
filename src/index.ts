@@ -1,7 +1,8 @@
-import { MapUtil } from './core'
+import {core} from './core'
 
-const sol: any = {}
+/** @type {*} */
+const arsc: any = {}
 
-sol.MapUtil = MapUtil
+arsc.core = core
 
-export { sol }
+export default arsc
