@@ -1,4 +1,4 @@
-import { MapUtil } from './core'
+import {MapUtil} from './core/MapUtil'
 
 const sol: any = {}
 
