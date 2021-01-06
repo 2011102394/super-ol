@@ -1,6 +1,6 @@
 import { MapUtil } from './core'
 
-const sol = {}
+const sol: any = {}
 
 sol.MapUtil = MapUtil
 

@@ -18,8 +18,11 @@
 	"author": "张超嘉",
 	"license": "Apache-2.0",
 	"devDependencies": {
+		"@types/ol": "^6.4.2",
 		"express": "^4.17.1",
 		"open": "^7.3.0",
+		"ts-loader": "^8.0.14",
+		"typescript": "^4.1.3",
 		"webpack": "^5.11.1",
 		"webpack-cli": "^4.3.1"
 	},

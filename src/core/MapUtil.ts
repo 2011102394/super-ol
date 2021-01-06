@@ -6,10 +6,15 @@ export class MapUtil {
 	constructor() {}
 
 	/**
-	 * 地图实例初始化
-	 * @param {*} mapContainer 
+	 * @description
+	 * @author zcj
+	 * @static
+	 * @param {} mapContainer
+	 * @param {*} initOption
+	 * @return {*}
+	 * @memberof MapUtil
 	 */
-	static mapInit(mapContainer) {
+	static mapInit(mapContainer: any, initOption: any) {
 		let map
 		if (mapContainer) {
 			map = new Map({
