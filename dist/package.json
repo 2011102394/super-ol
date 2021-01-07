@@ -1,6 +1,6 @@
 {
 	"name": "arsc-ol",
-	"version": "1.0.6",
+	"version": "1.0.7",
 	"description": "openlayers工具集",
 	"main": "index.js",
 	"scripts": {
