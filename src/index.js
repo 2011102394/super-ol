@@ -1,7 +1,1 @@
-import { MapUtil } from './core'
-
-/** @type {*} */
-const arsc = {
-}
-
-export { arsc }
+export * from './core'

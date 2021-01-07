@@ -7,11 +7,11 @@ export class MapUtil {
 	/**
 	 * @description map实例初始化
 	 * @author zcj
-	 * @param {MapInitParams} initParam
+	 * @param initParam
 	 * @memberof MapUtil
 	 */
-	static init = (initParam) => {
-		let map
+	static init(initParam) {
+		var map
 		if (initParam.target) {
 			map = new Map({
 				target: initParam.target,
@@ -27,15 +27,14 @@ export class MapUtil {
 	/**
 	 * @description 设置view对象
 	 * @author zcj
-	 * @param {Map} map
-	 * @param {ViewInitOption} viewOptions
+	 * @param  map
+	 * @param  viewOptions
 	 * @memberof MapUtil
 	 */
-	static setView = (map, viewOptions) => {
-		let view
-		const options = Object.assign(mapConfig.defaultViewConfig, viewOptions)
+	static setView(map, viewOptions) {
+		var view
+		var options = Object.assign(mapConfig.defaultViewConfig, viewOptions)
 		view = new View(options)
 		map.setView(view)
 	}
 }
-
