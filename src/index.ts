@@ -5,4 +5,4 @@ const arsc: any = {}
 
 arsc.core = core
 
-export default arsc
+export {arsc}

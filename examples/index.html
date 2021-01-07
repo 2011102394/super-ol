@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./lib/openlayers/ol.css">
-  <script src="/lib/openlayers/ol.js"></script>
+  <script src="./lib/openlayers/ol.js"></script>
   <script src="/dist/index.js"></script>
   <style>
     html,
@@ -30,10 +30,17 @@
     <div id="map"></div>
   </div>
   <script>
-    const ol = top.ol
-    const core = arsc.core
-    const map = core.mapInit(ol, 'map', {})
-
+    const viewerOption = {
+      center: ol.proj.fromLonLat([108.94, 34.34]),
+      zoom: 4
+    }
+    const map = arsc.core.mapInit('map', {}, viewerOption)
+    console.log(map)
+    const osmLayer = new ol.layer.Tile({
+      source: new ol.source.OSM()
+    })
+    console.log(map.getLayers())
+    map.addLayer(osmLayer)
   </script>
 </body>
 
