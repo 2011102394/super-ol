@@ -31,15 +31,13 @@
   </div>
   <script>
     const viewerOption = {
-      center: ol.proj.fromLonLat([108.94, 34.34]),
-      zoom: 4
+      zoom: 4,
+      minZoom: 1
     }
-    const map = arsc.core.mapInit('map', {}, viewerOption)
-    console.log(map)
+    const map = arsc.core.mapInit('map')
     const osmLayer = new ol.layer.Tile({
       source: new ol.source.OSM()
     })
-    console.log(map.getLayers())
     map.addLayer(osmLayer)
   </script>
 </body>

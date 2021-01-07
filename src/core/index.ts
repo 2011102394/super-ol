@@ -1,5 +1,6 @@
 import { Map, View } from 'ol'
 import { BaseLayersInitOption, ViewInitOption } from '../const/mapInitConst'
+import mapConfig from '../config/mapConfig'
 
 /**
  * @description 地图实例初识化
@@ -31,7 +32,7 @@ const mapInit = (
  */
 const viewInit = (viewOption: ViewInitOption | undefined) => {
 	let view
-	view = new View(viewOption)
+	view = new View(Object.assign(mapConfig.defaultViewConfig,viewOption))
 	return view
 }
 
