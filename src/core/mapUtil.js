@@ -11,7 +11,7 @@ export class MapUtil {
 	 * @memberof MapUtil
 	 */
 	static init(initParam) {
-		var map
+		let map
 		if (initParam.target) {
 			map = new Map({
 				target: initParam.target,
@@ -32,12 +32,10 @@ export class MapUtil {
 	 * @memberof MapUtil
 	 */
 	static setView(map, viewOptions) {
-		var view
-		var options = Object.assign(mapConfig.defaultViewConfig, viewOptions)
-		view = new View(options)
+		const options = Object.assign(mapConfig.defaultViewConfig, viewOptions)
+		const view = new View(options)
 		map.setView(view)
 	}
-
 
 	/**
 	 * @description 根据id查找图层
@@ -46,7 +44,7 @@ export class MapUtil {
 	 * @param {*} id  layer的id
 	 * @memberof MapUtil
 	 */
-	findLayerById = (map, id) => {
+	static findLayerById(map, id) {
 		const layerArray = map.getLayers().array_
 		let layer
 		if (layerArray.length > 0) {
