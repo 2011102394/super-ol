@@ -1,1 +1,1 @@
-export { MapUtil } from './mapUtil'
+export { default as MapUtil } from './mapUtil'
