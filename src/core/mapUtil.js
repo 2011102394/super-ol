@@ -120,4 +120,47 @@ const addXYZLayer = (map, param) => {
 	map.addLayer(xyzLayer)
 }
 
-export default { init, setView, findLayerById, addLayer }
+
+
+/**
+ * @description 根据id获取图层在layer中的下标
+ * @author zcj
+ * @param {*} map 地图实例对象
+ * @param {*} id 图层id
+ * @return {*} 
+ */
+const findLayerIndex = (map, id) => {
+	const layers = map.getLayers().getArray()
+	let index
+	if (layers.length > 0) {
+		index = layers.findIndex((item) => item.values_.id === id)
+	}
+	return index
+}
+
+
+
+/**
+ * @description 交换指定id的两个图层位置
+ * @author zcj
+ * @param {*} map 地图实例
+ * @param {*} layerId1 图层1id
+ * @param {*} layerId2 图层2id
+ */
+const switchLayerLevel = (map, layerId1, layerId2) => {
+	const layers = map.getLayers().getArray()
+	if (layers.length > 0) {
+		const layerIndex1 = findLayerIndex(map, layerId1)
+		const layerIndex2 = findLayerIndex(map, layerId2)
+		const layer1 = findLayerById(map, layerId1)
+		const layer2 = findLayerById(map, layerId2)
+		if (layerIndex1 !== undefined && layerIndex2 !== undefined) {
+      const layerCollection = map.getLayers()
+      layerCollection.remove(layer2)
+      layerCollection.setAt(layerIndex1, layer2)
+      layerCollection.setAt(layerIndex2, layer1)
+		}
+	}
+}
+
+export default { init, setView, findLayerById, addLayer, switchLayerLevel}

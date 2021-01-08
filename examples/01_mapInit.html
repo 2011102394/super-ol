@@ -18,10 +18,11 @@
 <body>
   <div id="map"></div>
   <script>
-    const map = MapUtil.init({ target: 'map' })
-    const view = MapUtil.setView(map)
+    const mapUtil = arsc.mapUtil
+    const map = mapUtil.init({ target: 'map' })
+    const view = mapUtil.setView(map)
     const layer = new ol.layer.Tile({
-      source:new ol.source.OSM()
+      source: new ol.source.OSM()
     })
     map.addLayer(layer)
   </script>

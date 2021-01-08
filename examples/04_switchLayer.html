@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>调整图层层级</title>
+  <link rel="stylesheet" href="./lib/openlayers/ol.css">
+  <script src="./lib/openlayers/ol.js"></script>
+  <script src="/dist/index.js"></script>
+  <style>
+    #map {
+      height: 900px;
+    
+    }
+    .switch_bt{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="map"></div>
+    <button onclick="switchLayer()" class="switch_bt">调整层级</button>
+  </div>
+  <script>
+    const mapUtil = arsc.mapUtil
+    const map = mapUtil.init({ target: 'map' })
+    const view = mapUtil.setView(map)
+    const url1 = 'http://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+    const param = {
+      id:'osm',
+      visiable:true,
+      url:url1,
+    }
+    mapUtil.addLayer(map,param,'XYZ')
+    const url2 = 'https://mt1.google.cn/vt/lyrs=y@113&hl=zh-CN&gl=cn&x={x}&y={y}&z={z}&s='
+    const param2 = {
+      id:'img',
+      visiable:true,
+      url:url2
+    }
+    mapUtil.addLayer(map,param2,'XYZ')
+    function switchLayer(){
+      mapUtil.switchLayerLevel(map,'osm','img')
+    }
+  </script>
+</body>
+
+</html>
