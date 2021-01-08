@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>生成底图切换组件</title>
+  <link rel="stylesheet" href="./lib/openlayers/ol.css">
+  <script src="./lib/openlayers/ol.js"></script>
+  <script src="/dist/index.js"></script>
+  <script src="./config.js"></script>
+  <style>
+    #map {
+      height: 900px;
+
+    }
+
+    .container {
+      height: 900px;
+    }
+
+    #base_layer_switch_container {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      border: 1px solid #1890ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="map"></div>
+    <div id="base_layer_switch_container"></div>
+  </div>
+  <script>
+    const mapUtil = arsc.core.mapUtil
+    const map = mapUtil.init({ target: 'map' })
+    const view = mapUtil.setView(map)
+    const initparam = {
+      target: 'base_layer_switch_container',
+      map: map,
+      type: {},
+      baseLayers: config.baseLayers.googleMap
+    }
+    arsc.control.baseLayerSwitch.createBaseLayerSwitch(initparam)
+  </script>
+</body>
+
+</html>
