@@ -37,4 +37,25 @@ export class MapUtil {
 		view = new View(options)
 		map.setView(view)
 	}
+
+
+	/**
+	 * @description 根据id查找图层
+	 * @author zcj
+	 * @param {*} map map实例
+	 * @param {*} id  layer的id
+	 * @memberof MapUtil
+	 */
+	findLayerById = (map, id) => {
+		const layerArray = map.getLayers().array_
+		let layer
+		if (layerArray.length > 0) {
+			layerArray.forEach((item) => {
+				if (item.values_.id === id) {
+					layer = item
+				}
+			})
+		}
+		return layer
+	}
 }
