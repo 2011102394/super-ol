@@ -27,7 +27,7 @@
     <button onclick="setOpactiy()" class="opacity_bt">设置透明度</button>
   </div>
   <script>
-    const mapUtil = arsc.mapUtil
+    const mapUtil = arsc.core.mapUtil
     const map = mapUtil.init({ target: 'map' })
     const view = mapUtil.setView(map)
     const layer = new ol.layer.Tile({
