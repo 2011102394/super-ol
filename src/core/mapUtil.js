@@ -60,7 +60,6 @@ export class MapUtil {
 		return layer
 	}
 
-
 	/**
 	 * @description 添加图层到地图中
 	 * @author zcj
@@ -73,18 +72,17 @@ export class MapUtil {
 	static addLayer(map, param, type) {
 		switch (type) {
 			case 'WMS': {
-				addWMSTileLayer(map, param)
+				this.addWMSTileLayer(map, param)
 				break
 			}
 			case 'XYZ': {
-				addXYZLayer(map, param)
+				this.addXYZLayer(map, param)
 				break
 			}
 			default:
 				return
 		}
 	}
-
 
 	/**
 	 * @description 添加WMS服务到地图中
@@ -93,7 +91,7 @@ export class MapUtil {
 	 * @param {*} param 服务参数
 	 * @memberof MapUtil
 	 */
-	addWMSTileLayer(map, param) {
+	static addWMSTileLayer(map, param) {
 		const { url, options, id } = param
 		const wmsTileLayer = new Tile({
 			visible: param.visible,
@@ -106,7 +104,6 @@ export class MapUtil {
 		map.addLayer(wmsTileLayer)
 	}
 
-	
 	/**
 	 * @description 添加XYZ图层到地图中
 	 * @author zcj
@@ -114,7 +111,7 @@ export class MapUtil {
 	 * @param {*} param 服务参数
 	 * @memberof MapUtil
 	 */
-	addXYZLayer(map, param) {
+	static addXYZLayer(map, param) {
 		const { url, id, visible } = param
 		const xyzLayer = new Tile({
 			visible,
