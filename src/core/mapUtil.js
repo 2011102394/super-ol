@@ -1,6 +1,9 @@
 import { Map, View } from 'ol'
 import { defaults } from 'ol/control'
 import mapConfig from '../config/mapConfig'
+import TileWMS from 'ol/source/TileWMS'
+import Tile from 'ol/layer/Tile'
+import XYZ from 'ol/source/XYZ'
 export class MapUtil {
 	constructor() {}
 
@@ -55,5 +58,71 @@ export class MapUtil {
 			})
 		}
 		return layer
+	}
+
+
+	/**
+	 * @description 添加图层到地图中
+	 * @author zcj
+	 * @static
+	 * @param {*} map 地图实例对象
+	 * @param {*} param 服务参数
+	 * @param {*} type 服务类型
+	 * @memberof MapUtil
+	 */
+	static addLayer(map, param, type) {
+		switch (type) {
+			case 'WMS': {
+				addWMSTileLayer(map, param)
+				break
+			}
+			case 'XYZ': {
+				addXYZLayer(map, param)
+				break
+			}
+			default:
+				return
+		}
+	}
+
+
+	/**
+	 * @description 添加WMS服务到地图中
+	 * @author zcj
+	 * @param {*} map 地图实例对象
+	 * @param {*} param 服务参数
+	 * @memberof MapUtil
+	 */
+	addWMSTileLayer(map, param) {
+		const { url, options, id } = param
+		const wmsTileLayer = new Tile({
+			visible: param.visible,
+			source: new TileWMS({
+				url,
+				params: options,
+			}),
+		})
+		id ? wmsTileLayer.set('id', id) : null
+		map.addLayer(wmsTileLayer)
+	}
+
+	
+	/**
+	 * @description 添加XYZ图层到地图中
+	 * @author zcj
+	 * @param {*} map 地图实例对象
+	 * @param {*} param 服务参数
+	 * @memberof MapUtil
+	 */
+	addXYZLayer(map, param) {
+		const { url, id, visible } = param
+		const xyzLayer = new Tile({
+			visible,
+			source: new XYZ({
+				url,
+			}),
+		})
+		id ? xyzLayer.set('id', id) : null
+		map.addLayer(xyzLayer)
 	}
 }
