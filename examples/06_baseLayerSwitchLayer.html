@@ -43,9 +43,17 @@
       target: 'base_layer_switch_container',
       map: map,
       type: {},
-      baseLayers: config.baseLayers.googleMap
+      baseLayers: config.baseLayers.tdt
     }
     arsc.control.baseLayerSwitch.createBaseLayerSwitch(initparam)
+    const url =
+      'http://t0.tianditu.gov.cn/cta_w/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=cta&STYLE=default&TILEMATRIXSET=w&FORMAT=tiles&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}&tk=d4a3ea97540bebbd2c400faaeed26986'
+    const param = {
+      id: 'cva_w',
+      visiable: true,
+      url: url,
+    }
+    mapUtil.addLayer(map, param, 'XYZ')
   </script>
 </body>
 
